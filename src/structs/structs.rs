@@ -89,8 +89,8 @@ struct Gene {
 #[derive(Deserialize, Serialize, Debug)]
 #[serde(tag = "object_type")]
 pub enum EnsemblFeature {
-    Gene,
-    Transcript,
-    Exon,
-    Protein,
+    Gene(Gene),
+    Transcript(Transcript),
+    Exon(Exon),
+    Protein(Protein),
 }
