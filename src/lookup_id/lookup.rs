@@ -21,6 +21,7 @@ pub async fn lookup_id(
 
     if resp.status().is_success() {
         let feature: EnsemblFeature = resp.json().await?;
+        //let bed = feature.to_bed(name="AAA")
         Ok(feature)
     } else {
         // Print the error status and message

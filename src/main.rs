@@ -20,6 +20,13 @@ struct Args {
 #[tokio::main]
 async fn main() {
     let args = Args::parse();
-    let feature = lookup_id(&args.id, args.expand);
-    println!("{:?}", feature.await.expect("PROVA"))
+    let feature = lookup_id(&args.id, args.expand).await;
+    match feature {
+        Ok(feature) => {
+            feature.to_bed();
+        }
+        Err(e) => {
+            eprintln!("Error: {}", e);
+        }
+    }
 }
