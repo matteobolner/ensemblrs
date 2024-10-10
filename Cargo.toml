@@ -8,4 +8,5 @@ reqwest = { version = "0.12.5", features= ["json"]}
 tokio = { version = "1.39.2", features= ["full"] }
 serde = {version = "1.0.206", features= ["derive"] }
 clap = { version = "4.5.17", features = ["derive"] }
+tabled = "0.16.0"
 
